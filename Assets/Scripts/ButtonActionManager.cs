@@ -60,7 +60,14 @@ public class ButtonActionManager : MonoBehaviour {
     // continue dragon game from last checkpoint
     void ContinueDragonGame()
     {
-        FindObjectOfType<DragonGameManager>().ContinueFromCheckpoint();
+        if (SceneManager.GetActiveScene().name == "dragon_game")
+        {
+            FindObjectOfType<DragonGameManager>().ContinueFromCheckpoint();
+        }
+        else if (SceneManager.GetActiveScene().name == "bomb_game")
+        {
+            FindObjectOfType<BombGameManager>().ContinueFromCheckpoint();
+        }
     }
 
     public void StartSceneCountDown(){

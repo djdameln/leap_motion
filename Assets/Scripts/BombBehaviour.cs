@@ -11,6 +11,7 @@ public class BombBehaviour : MonoBehaviour
     Rigidbody rb; // for changing velocity
     int region; // spawn region this instance is assigned to
     BombGenerator bg; // reference to bombgenerator
+    BombGameManager gm; // reference to game manager
 
     GameObject scoreUpText; // live+ and +1 messages
     GameObject oneUpIcon;
@@ -31,6 +32,8 @@ public class BombBehaviour : MonoBehaviour
         Invoke("StartAnimation", explosionTime-animationDuration); // initialize animation
 
         startTime = Time.time; // store time at which bomb was spawned
+
+        gm = FindObjectOfType<BombGameManager>();
     }
     
     // method that returns the duration of the animation associated with the bomb object class
@@ -55,7 +58,7 @@ public class BombBehaviour : MonoBehaviour
         Instantiate(explosion, transform.position, Quaternion.Euler(0, 0, 0));
         Destroy(this.gameObject);
         bg.FreeRegion(region); // tell bomb generator that region is now free
-        HealthManager.lives--;
+        gm.DecreaseHealth();
     }
 
     void StartAnimation()
@@ -80,14 +83,15 @@ public class BombBehaviour : MonoBehaviour
             if (Time.time < startTime + 3 && HealthManager.lives < 3) // bonus live when fast enough
             {
                 Instantiate(oneUpIcon, transform.position, Quaternion.Euler(0, 0, 0));
-                HealthManager.lives++;
+                gm.IncreaseHealth();
             }
             else // otherwise show +1 message
             {
                 GetComponent<AudioSource>().Play();
                 Instantiate(scoreUpText, transform.position, Quaternion.Euler(0, 0, 0));
             }
-            Score.score += 1;
+            //Score.score += 1;
+            gm.IncrementScore();
         }
     }
 

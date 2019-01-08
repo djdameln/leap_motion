@@ -16,10 +16,9 @@ public class BombGenerator : MonoBehaviour {
     List<int> freeRegions = new List<int>(); // list of regions not holding a bomb
 
     // initialize
-    void Start(){
+    void Awake(){
         InitializeSpawnRegions(); // set region centroids
         bomb = Resources.Load("Bomb") as GameObject;
-        StartCoroutine(InitializeSpawn(3.0f)); // start spawning bombs
     }
 
     // hard code spawn region centroids, initialize all regions as 'free'
@@ -52,11 +51,26 @@ public class BombGenerator : MonoBehaviour {
         }
         return spawnTime;
     }
-    
+
+    public void CheckFieldEmpty()
+    {
+        if (freeRegions.Count == 6)
+        {
+            StopAllCoroutines();
+            StartCoroutine(InitializeSpawn(0.0f));
+        }
+    }
+
     // stop generating bombs
     private void OnDisable()
     {
         StopAllCoroutines();
+    }
+
+    // start spawning bombs
+    private void OnEnable()
+    {
+        StartCoroutine(InitializeSpawn(3.0f));
     }
 
     // this method delays the spawning of the first bomb
@@ -88,6 +102,11 @@ public class BombGenerator : MonoBehaviour {
     public void FreeRegion(int region)
     {
         freeRegions.Add(region);
+        if (freeRegions.Count == 6) // if there are no bombs left, do not wait for next spawn time, spawn new bomb immediately
+        {
+            StopAllCoroutines();
+            StartCoroutine(InitializeSpawn(0.5f));
+        }
     }
 
 }
