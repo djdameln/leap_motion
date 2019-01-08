@@ -5,7 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/main_menu.unity
+    guid: e82a662ae199a3047863ee06b2a73f7c
+  - enabled: 1
+    path: Assets/Scenes/grab_game.unity
+    guid: 8032b6953f7765245b9b6235b85d706b
+  - enabled: 1
+    path: Assets/Scenes/bomb_game.unity
+    guid: 1e0aa7ba9ce0556478e7029e690b46e6
+  - enabled: 1
+    path: Assets/Scenes/dragon_game.unity
+    guid: fe119fa76b8db84479f6e88b2083f390
+  - enabled: 1
+    path: Assets/Scenes/dragon_instructions.unity
+    guid: 6d2afe72f8e8ed343a94fda30b095961
+  - enabled: 1
+    path: Assets/Scenes/bomb_instructions.unity
+    guid: f15ae351712f5e54b98e716b8207c039
+  - enabled: 1
+    path: Assets/Scenes/about_scene.unity
+    guid: 012404df0a46d6f48b8b37c3b38cb21f
   m_configObjects: {}

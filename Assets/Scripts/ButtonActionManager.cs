@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonActionManager : MonoBehaviour {
 
+    void QuitGame()
+    {
+        Application.Quit();
+    }
+
     void LoadAboutScene()
     {
         SceneManager.LoadScene(sceneName: "about_scene");
@@ -61,6 +66,9 @@ public class ButtonActionManager : MonoBehaviour {
     public void StartSceneCountDown(){
         // start the countdown for the method associated with current button
         switch (this.gameObject.name){
+            case "Quit Cube":
+                Invoke("QuitGame", 2);
+                break;
             case "About Cube":
                 Invoke("LoadAboutScene", 2);
                 break;
