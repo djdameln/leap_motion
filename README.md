@@ -2,6 +2,9 @@
 
 This repository contains the source code and a compiled version of a serious video game that aims to improve functional movement outcome of patients suffering upper extremity injuries using the Leap Motion Controller. The game was developed during the masterwork project of the High Tech Systems and Materials master honours programme at the University of Groningen. 
 
+<img src="https://github.com/djdameln/leap_motion/blob/master/Screenshots/main_menu.png?raw=true" width="49%"> <img src="https://github.com/djdameln/leap_motion/blob/master/Screenshots/game_over.png?raw=true" width="49%">
+<img src="https://github.com/djdameln/leap_motion/blob/master/Screenshots/dragon_game.png?raw=true" width="49%"> <img src="https://github.com/djdameln/leap_motion/blob/master/Screenshots/bomb_game.png?raw=true" width="49%">
+
 ## Prerequisites
 
 To play the game, you will need access to a Leap Motion Desktop Controller (https://www.leapmotion.com/product/desktop-controller/), and a windows computer. 
@@ -18,4 +21,4 @@ Save the source code and a compiled version of the game to your computer, by clo
     
 To start the compiled game, open the 'Build' folder and launch the windows executable 'LeapMotionExergame.exe'. Make sure that the Leap Motion Controller is plugged in and connected to your computer (as indicated by the green Leap Motion icon in the windows taskbar).
     
-The source code can be viewed and modified using the Unity Editor. Download the latest version of the Unity Editor from https://store.unity.com. To load the source code of the game in Unity, launch the Unity Editor and choose 'Open Project'. Select the folder downloaded from GitHub in the file browser and click 'Open'. All assets and project settings will now be imported in a new Unity project that contains the full implementation of the rehabilitation game. The script 'HandTracker.sc' contains code that can be used to extract kinematics of the hands from the Leap Motion Controller.
+The source code can be viewed and modified using the Unity Editor. Download the latest version of the Unity Editor from https://store.unity.com. To load the source code of the game in Unity, launch the Unity Editor and choose 'Open Project'. Select the folder downloaded from GitHub in the file browser and click 'Open'. All assets and project settings will now be imported in a new Unity project that contains the full implementation of the rehabilitation game.
